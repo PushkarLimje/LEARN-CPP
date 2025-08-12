@@ -30,12 +30,36 @@ int binarySearch(int n){
 }
 
 
+//more precision in answer .
+double morePrecision(int n , int precision , int root){
+    double ans = root;
+    double factor = 1;
+    for (int i = 0; i < precision; i++)
+    {
+        factor /=  10;
+
+        for (double j = ans; j*j < n ; j+= factor){
+            ans = j;
+        }
+        
+    }
+    return ans ;
+}
 
 int main()
 {
-    int n = 55;
+    
+    int n ;
+    std::cout << "Enter the number" << std::endl;
+    cin>> n ;
+    int decimal ;
+    std::cout << "Enter the precision " << std::endl;
+    cin>> decimal ;
+
+    int root = binarySearch(n);
     std::cout << "square root : "<< binarySearch(n) << std::endl;
-    std::cout << "hello" << std::endl;
+    std::cout << "precise answer:   "<< morePrecision(n, decimal, root) << std::endl;
+    
     return 0;
 }
 
