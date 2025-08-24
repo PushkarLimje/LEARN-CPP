@@ -6,10 +6,10 @@ using namespace std;
 void bubbleSort( vector<int> &arr ){
 
     int n = arr.size();
-    for (int i = 0; i < n -1; i++)
+    for (int i = 0; i < n -1; i++)          // reminder of the the largest no. at last positn
     {
         bool isSwapped = false ;
-        for (int j = 0; j < (n-i-1); j++)
+        for (int j = 0; j < (n-i-1); j++)   // checks and swap ,put the largest element in last position 
         {
             if (arr[j]>arr[j+1])
             {
